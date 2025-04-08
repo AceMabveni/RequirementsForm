@@ -68,7 +68,7 @@
     <div class="max-w-4xl mx-auto bg-white p-6 sm:p-10 rounded-lg shadow-md">
         <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 sm:mb-8 border-b pb-4">Website Requirements</h1>
 
-        <form action="#" method="POST">
+        <form action="https://formspree.io/f/xvgkvean" method="POST">
             <div class="space-y-8">
 
                 <section class="border-b pb-6">
@@ -231,7 +231,14 @@
                         </div>
 
                          <div class="sm:col-span-4">
-                            <label for="initial_email" class="block text-sm font-medium leading-6 text-gray-900">Initial Email Address(es) to Set Up (e.g., info@yourdomain.com):</label>
+                             <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Your Email Address (for form notifications):</label>
+                            <div class="mt-2">
+                                <input type="email" name="email" id="email" required placeholder="Enter your email" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                <p class="mt-1 text-xs text-gray-500">Required by Formspree to send you submissions.</p>
+                            </div>
+                        </div>
+                         <div class="sm:col-span-4">
+                            <label for="initial_email" class="block text-sm font-medium leading-6 text-gray-900">Initial Client Email Address(es) to Set Up (e.g., info@yourdomain.com):</label>
                             <div class="mt-2">
                                 <input type="text" name="initial_email" id="initial_email" placeholder="Separate multiple emails with commas" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
@@ -253,7 +260,7 @@
 
                          <div class="sm:col-span-6">
                             <label for="page_information" class="block text-sm font-medium leading-6 text-gray-900">Information/Content for Each Page (Optional):</label>
-                            <p class="text-xs text-gray-500 mb-2">Please provide text content for each page if available. You can also email this separately or provide it later.</p>
+                             <p class="text-xs text-gray-500 mb-2">Please provide text content for each page if available. You can also email this separately or provide it later.</p>
                             <div class="mt-2">
                                 <textarea id="page_information" name="page_information" rows="6" placeholder="Outline the content for each page here if you have it..." class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
                             </div>
