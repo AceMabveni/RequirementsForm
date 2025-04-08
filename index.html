@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Requirements</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            }
+        }
+    </script>
+    <style>
+      @font-face {
+        font-family: 'LucideIcons';
+        /* Use unpkg CDN for consistency */
+        src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
+      }
+      .lucide {
+        font-family: 'LucideIcons';
+        font-size: 1.25rem; /* Adjust size as needed */
+        line-height: 1;
+        vertical-align: middle;
+        margin-right: 0.5rem; /* Space between icon and text */
+      }
+      /* Basic styling for better readability */
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      label {
+        font-weight: 500; /* Medium weight for labels */
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="url"], /* Added style for URL input */
+      textarea,
+      select {
+        border-color: #d1d5db; /* Gray-300 border */
+      }
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      input[type="tel"]:focus,
+      input[type="url"]:focus, /* Added focus style for URL input */
+      textarea:focus,
+      select:focus {
+        border-color: #6366f1; /* Indigo-500 focus border */
+        box-shadow: 0 0 0 1px #6366f1; /* Indigo-500 focus ring */
+      }
+      /* Custom checkbox/radio styling */
+      input[type="checkbox"],
+      input[type="radio"] {
+        color: #6366f1; /* Indigo-600 */
+      }
+      input[type="checkbox"]:focus,
+      input[type="radio"]:focus {
+        ring-color: #818cf8; /* Indigo-400 focus ring */
+      }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 sm:p-8">
+    <div class="max-w-4xl mx-auto bg-white p-6 sm:p-10 rounded-lg shadow-md">
+        <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 sm:mb-8 border-b pb-4">Website Requirements</h1>
+
+        <form action="#" method="POST">
+            <div class="space-y-8">
+
+                <section class="border-b pb-6">
+                    <h2 class="text-xl font-semibold text-gray-700 mb-4 flex items-center"><span class="lucide">&#xe99a;</span> Domain Name</h2>
+                    <div class="grid grid-cols-1 gap-y-4 gap-x-6 sm:grid-cols-6">
+                        <div class="sm:col-span-4">
+                            <label for="domain_name" class="block text-sm font-medium leading-6 text-gray-900">1. Desired Domain Name (if known):</label>
+                            <div class="mt-2">
+                                <input type="text" name="domain_name" id="domain_name" placeholder="e.g., yourcompany" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-6">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">2. Preferred Domain Extension:</label>
+                            <fieldset class="mt-2">
+                                <legend class="sr-only">Domain extension options</legend>
+                                <div class="space-y-2 sm:flex sm:items-center sm:space-x-6 sm:space-y-0">
+                                    <div class="flex items-center">
+                                        <input id="ext_co_uk" name="domain_extension" type="radio" value=".co.uk" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                        <label for="ext_co_uk" class="ml-3 block text-sm leading-6 text-gray-900">.co.uk</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input id="ext_uk" name="domain_extension" type="radio" value=".uk" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                        <label for="ext_uk" class="ml-3 block text-sm leading-6 text-gray-900">.uk</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input id="ext_com" name="domain_extension" type="radio" value=".com" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                        <label for="ext_com" class="ml-3 block text-sm leading-6 text-gray-900">.com</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input id="ext_other" name="domain_extension" type="radio" value="other" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                        <label for="ext_other" class="ml-3 block text-sm leading-6 text-gray-900">Other (Please specify)</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                         <div class="sm:col-span-6">
+                             <p class="mt-2 text-sm text-gray-600 bg-gray-50 p-3 rounded-md">
+                                <span class="font-semibold">Note:</span> Recommended budget for domain registration is typically £10-£15 per year, depending on the extension.
+                             </p>
+                         </div>
+                    </div>
+                </section>
+
+                <section class="border-b pb-6">
+                    <h2 class="text-xl font-semibold text-gray-700 mb-4 flex items-center"><span class="lucide">&#xe968;</span> Hosting & Development Overview</h2>
+                     <div class="space-y-4 text-sm text-gray-700 bg-indigo-50 p-4 rounded-md">
+                         <p><span class="font-semibold">Website Hosting:</span></p>
+                         <ul class="list-disc list-inside ml-4">
+                             <li>First Year: £30</li>
+                             <li>Subsequent Years: £60 per year</li>
+                         </ul>
+                         <p class="mt-2"><span class="font-semibold">Basic Website Development (WordPress):</span></p>
+                         <ul class="list-disc list-inside ml-4">
+                             <li>Includes 2 Pages (e.g., Home + Contact): £500</li>
+                             <li>Theme setup, Header, Footer included.</li>
+                         </ul>
+                         <p class="mt-2"><span class="font-semibold">Additional Features (Costs to be advised):</span></p>
+                          <ul class="list-disc list-inside ml-4">
+                             <li>Contact/Enquiry Form Integration</li>
+                             <li>Live Chat Integration</li>
+                             <li>Other features (please discuss below)</li>
+                         </ul>
+                         <p class="mt-3 italic text-gray-600">Please feel free to discuss any additional website development features you might require.</p>
+                     </div>
+                </section>
+
+                <section class="border-b pb-6">
+                    <h2 class="text-xl font-semibold text-gray-700 mb-4 flex items-center"><span class="lucide">&#xea4c;</span> Company & Website Details</h2>
+                    <div class="grid grid-cols-1 gap-y-4 gap-x-6 sm:grid-cols-6">
+                        <div class="sm:col-span-4">
+                            <label for="company_name" class="block text-sm font-medium leading-6 text-gray-900">Company Name:</label>
+                            <div class="mt-2">
+                                <input type="text" name="company_name" id="company_name" required class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-6">
+                            <label for="company_functions" class="block text-sm font-medium leading-6 text-gray-900">Brief Description of Company Functions/Services:</label>
+                            <div class="mt-2">
+                                <textarea id="company_functions" name="company_functions" rows="3" required class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-3">
+                            <label for="company_number" class="block text-sm font-medium leading-6 text-gray-900">Company Number (if applicable):</label>
+                            <div class="mt-2">
+                                <input type="text" name="company_number" id="company_number" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                        <div class="sm:col-span-3 flex items-end pb-1">
+                             <div class="flex h-6 items-center">
+                                <input id="display_company_number" name="display_company_number" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                              </div>
+                              <div class="ml-3 text-sm leading-6">
+                                <label for="display_company_number" class="font-medium text-gray-900">Display on website?</label>
+                              </div>
+                        </div>
+
+                        <div class="sm:col-span-3">
+                            <label for="registered_address" class="block text-sm font-medium leading-6 text-gray-900">Company Registered Address (if applicable):</label>
+                            <div class="mt-2">
+                                <textarea id="registered_address" name="registered_address" rows="3" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-3">
+                            <label for="office_address" class="block text-sm font-medium leading-6 text-gray-900">Company Official Office Address (for contact page):</label>
+                            <div class="mt-2">
+                                <textarea id="office_address" name="office_address" rows="3" required class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-3">
+                            <label for="mobile_number" class="block text-sm font-medium leading-6 text-gray-900">Mobile Number:</label>
+                            <div class="mt-2">
+                                <input type="tel" name="mobile_number" id="mobile_number" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-3">
+                            <label for="office_number" class="block text-sm font-medium leading-6 text-gray-900">Office Number:</label>
+                            <div class="mt-2">
+                                <input type="tel" name="office_number" id="office_number" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-4">
+                            <label for="responsible_person" class="block text-sm font-medium leading-6 text-gray-900">Main Contact Person for Website Project:</label>
+                            <div class="mt-2">
+                                <input type="text" name="responsible_person" id="responsible_person" required class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-3">
+                            <label for="primary_color" class="block text-sm font-medium leading-6 text-gray-900">Primary Brand Colour:</label>
+                            <div class="mt-2">
+                                <input type="text" name="primary_color" id="primary_color" placeholder="e.g., Purple, #800080" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                         <div class="sm:col-span-3">
+                            <label for="secondary_color" class="block text-sm font-medium leading-6 text-gray-900">Secondary Brand Colour (if any):</label>
+                            <div class="mt-2">
+                                <input type="text" name="secondary_color" id="secondary_color" placeholder="e.g., Black, #000000" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-6">
+                            <label for="slogan" class="block text-sm font-medium leading-6 text-gray-900">Company Slogan (if any):</label>
+                            <div class="mt-2">
+                                <input type="text" name="slogan" id="slogan" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-6">
+                            <label for="mission_statement" class="block text-sm font-medium leading-6 text-gray-900">Company Mission Statement (if any):</label>
+                            <div class="mt-2">
+                                <textarea id="mission_statement" name="mission_statement" rows="3" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                            </div>
+                        </div>
+
+                         <div class="sm:col-span-4">
+                            <label for="initial_email" class="block text-sm font-medium leading-6 text-gray-900">Initial Email Address(es) to Set Up (e.g., info@yourdomain.com):</label>
+                            <div class="mt-2">
+                                <input type="text" name="initial_email" id="initial_email" placeholder="Separate multiple emails with commas" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="border-b pb-6">
+                    <h2 class="text-xl font-semibold text-gray-700 mb-4 flex items-center"><span class="lucide">&#xe9d8;</span> Website Content & Structure</h2>
+                    <div class="grid grid-cols-1 gap-y-4 gap-x-6 sm:grid-cols-6">
+                        <div class="sm:col-span-6">
+                            <label for="pages_required" class="block text-sm font-medium leading-6 text-gray-900">Pages Required and Their Titles (Optional):</label>
+                            <p class="text-xs text-gray-500 mb-2">Basic package includes Home and Contact. You can list additional pages needed now (e.g., About Us, Services), or we can finalize this later.</p>
+                            <div class="mt-2">
+                                <textarea id="pages_required" name="pages_required" rows="4" placeholder="Home&#10;Contact&#10;About Us&#10;Services" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                            </div>
+                        </div>
+
+                         <div class="sm:col-span-6">
+                            <label for="page_information" class="block text-sm font-medium leading-6 text-gray-900">Information/Content for Each Page (Optional):</label>
+                            <p class="text-xs text-gray-500 mb-2">Please provide text content for each page if available. You can also email this separately or provide it later.</p>
+                            <div class="mt-2">
+                                <textarea id="page_information" name="page_information" rows="6" placeholder="Outline the content for each page here if you have it..." class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                            </div>
+                        </div>
+
+                         <div class="sm:col-span-6">
+                            <label class="block text-sm font-medium leading-6 text-gray-900">Company Logo & Photos:</label>
+                            <p class="mt-2 text-sm text-gray-600 bg-gray-50 p-3 rounded-md">
+                                <span class="font-semibold">Important:</span> The client is responsible for providing all necessary content, including the company logo (high-resolution) and any photos/images to be displayed on the website.
+                                <br>
+                                <span class="italic">If you require logo design services, this can be provided at an additional cost. Please let us know if this is needed.</span>
+                                <br><br>
+                                Please email logos and images to info@bandinda.com OR provide a link to a shared folder below.
+                            </p>
+                            <div class="mt-4">
+                                <label for="shared_folder_link" class="block text-sm font-medium leading-6 text-gray-900">Shared Folder Link (Optional):</label>
+                                <div class="mt-2">
+                                    <input type="url" name="shared_folder_link" id="shared_folder_link" placeholder="e.g., https://drive.google.com/..." class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                 </section>
+
+                 <section class="border-b pb-6">
+                    <h2 class="text-xl font-semibold text-gray-700 mb-4 flex items-center"><span class="lucide">&#xea30;</span> Social Media Links</h2>
+                     <p class="text-sm text-gray-600 mb-4">Please provide links to your company's social media profiles if you want them displayed on the website.</p>
+                    <div class="grid grid-cols-1 gap-y-4 gap-x-6 sm:grid-cols-6">
+                        <div class="sm:col-span-3">
+                            <label for="facebook_url" class="block text-sm font-medium leading-6 text-gray-900">Facebook URL:</label>
+                            <div class="mt-2">
+                                <input type="url" name="facebook_url" id="facebook_url" placeholder="https://facebook.com/yourpage" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                        <div class="sm:col-span-3">
+                            <label for="twitter_url" class="block text-sm font-medium leading-6 text-gray-900">X / Twitter URL:</label>
+                            <div class="mt-2">
+                                <input type="url" name="twitter_url" id="twitter_url" placeholder="https://twitter.com/yourhandle" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                        <div class="sm:col-span-3">
+                            <label for="linkedin_url" class="block text-sm font-medium leading-6 text-gray-900">LinkedIn URL:</label>
+                            <div class="mt-2">
+                                <input type="url" name="linkedin_url" id="linkedin_url" placeholder="https://linkedin.com/company/yourcompany" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                         <div class="sm:col-span-3">
+                            <label for="other_social_url" class="block text-sm font-medium leading-6 text-gray-900">Other (e.g., Instagram):</label>
+                            <div class="mt-2">
+                                <input type="url" name="other_social_url" id="other_social_url" placeholder="https://instagram.com/yourprofile" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div>
+                    </div>
+                 </section>
+
+                 <section>
+                    <h2 class="text-xl font-semibold text-gray-700 mb-4 flex items-center"><span class="lucide">&#xe9cb;</span> Additional Notes / Requirements</h2>
+                     <div class="sm:col-span-6">
+                            <label for="additional_notes" class="block text-sm font-medium leading-6 text-gray-900">Is there anything else you'd like to discuss or include?</label>
+                            <p class="text-xs text-gray-500 mb-2">Mention any specific features (e.g., blog, gallery, online store), design preferences, or questions you have.</p>
+                            <div class="mt-2">
+                                <textarea id="additional_notes" name="additional_notes" rows="5" class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                            </div>
+                        </div>
+                 </section>
+
+            </div>
+
+            <div class="mt-10 pt-6 border-t border-gray-200 flex justify-end">
+                <button type="submit" class="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Submit Requirements</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
